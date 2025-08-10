@@ -782,6 +782,7 @@ def schedule_blog_generation():
     # Schedule for Tuesday and Friday at 9:00 AM
     schedule.every().tuesday.at("09:00").do(generate_blog_post)
     schedule.every().friday.at("09:00").do(generate_blog_post)
+    schedule.every().sunday.at("09:00").do(generate_blog_post)
     
     logger.info("Blog generation scheduled for Tuesday and Friday at 9:00 AM")
     
