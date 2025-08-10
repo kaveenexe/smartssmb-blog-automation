@@ -652,7 +652,7 @@ def generate_blog_post():
         logger.info("Step 8: Creating blog post")
 
         # Generate canonical URL from slug
-        canonical_url = f"https://yourdomain.com/{slug}"  # Replace with your actual domain
+        canonical_url = f"https://www.smartssmb.com/post/{slug}"  # Replace with your actual domain
 
         # Prepare comprehensive post data with all required fields
         post_data = {
@@ -802,10 +802,10 @@ if __name__ == "__main__":
         logger.error(f"Missing required environment variables: {', '.join(missing_vars)}")
         exit(1)
     
-    logger.info("Starting Blog Generation Service")
+    logger.info("Starting Blog Generation Service in GitHub Actions")
     
-    # For testing, you can run immediately:
-    # generate_blog_post()
+    # For GitHub Actions, run immediately instead of scheduling
+    generate_blog_post()
     
     # For production, run the scheduler:
     schedule_blog_generation()
